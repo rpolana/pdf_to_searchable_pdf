@@ -4,17 +4,18 @@ A cross-platform python command-line utility that converts any PDF file containi
 
 ## Usage
 
-$ python pdf_to_searchable_pdf.py [-h] [-d DATA_DIR] [-t] [-i] input_filename
-positional arguments:
-  input_filename        input pdf filename
+`$ python pdf_to_searchable_pdf.py [-h] [-d DATA_DIR] [-t] [-i] input_filename`
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -d DATA_DIR, --data_dir DATA_DIR
-                        input data directory
-  -t, --text_flag       flag to output text file
-  -i, --intermediates_flag
-                        flag to output intermediate (page image and pdf) files
+    positional arguments:
+        input_filename        input pdf filename
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    -d DATA_DIR, --data_dir DATA_DIR
+                            input data directory
+    -t, --text_flag       flag to output text file
+    -i, --intermediates_flag
+                            flag to output intermediate (page image and pdf) files
 
 ## Requirements/Dependencies
 
