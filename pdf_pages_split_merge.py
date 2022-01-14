@@ -1,11 +1,15 @@
-import os, sys
+"""pdf_pages_split_merge: 
+Functions to split and merge pdf files using pypdf2 module
+    Requirements:
+        Split: split single pdf file into individual page pdf files
+        Merge: merge collection of pdf files based on a pattern into single pdf file, in the order of their name
+"""
+
+import os
 import glob
 
-import logging
 import configure_logging
-log = configure_logging.configure_log(__file__, log_level = 'INFO', log_to_console_flag = True, log_to_file_flag = False)
-def configure_log(logger):
-    global log; log = logger
+log = configure_logging.get_application_logger()
 
 from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
 

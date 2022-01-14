@@ -1,11 +1,26 @@
+#!/usr/bin/env python3
+"""pdf_to_searchable_pdf: 
+Create searchable pdf file from any pdf file having images or unsearchable (type3) fonts 
+    Requirements:
+        Using open source modules and tools
+    Design/Implementation: 
+    1. Convert pdf pages to image pages (of Image type) in memory using pdf2image module
+    2. OCR each image page using pytesseract module and tesseract OCR and create a searchable pdf file for each page 
+    3. Merge the individual searchable pdf page files into single searchable pdf file using pypdf2 module
+"""
+__author__ = "Ramprasad Polana"
+__email__ = "rpolana@yahoo.com"
+__license__ = "Unlicense: See the accompanying LICENCE file for details"
+__copyright__ = "Anti-Copyright Waiver: The author of this work hereby waives all claim of copyright (economic and moral) in this work and immediately places it in the public domain; it may be used, distorted or destroyed in any manner whatsoever without further attribution or notice to the creator."
+__date__ = "Dec 2021"
+__version__ = "1.0"
+__status__ = "Development"
+
 import os, sys
 import io
-import re
-import glob
 import argparse
 import tempfile
 
-import logging
 import configure_logging
 log = configure_logging.configure_log(__file__, log_level = 'INFO', log_to_console_flag = True, log_to_file_flag = False)
 log.info(f'***Running {sys.argv[0]} with arguments: {sys.argv[1:]}')
@@ -13,7 +28,6 @@ log.debug(f'**Current working directory: {os.getcwd()}')
 log.debug(f'**Path for loading python modules: {sys.path}')
 
 import pdf_pages_split_merge
-pdf_pages_split_merge.configure_log(log)
 
 import pytesseract # Tesseract OCR
 # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
